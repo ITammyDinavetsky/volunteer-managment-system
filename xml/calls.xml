@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCall xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Call>
+    <Id>1</Id>
+    <KindOfCall>RescueKid</KindOfCall>
+    <AddressOfCall>Even Gvirol 11, Elad</AddressOfCall>
+    <Latitude>32.0539178</Latitude>
+    <Longitude>34.9586121</Longitude>
+    <OpeningTime>2025-06-22T21:07:36</OpeningTime>
+    <FinishTime>2025-06-22T22:07:36</FinishTime>
+    <Description>help baby is in dangar!</Description>
+  </Call>
+  <Call>
+    <Id>3</Id>
+    <KindOfCall>FirstAid</KindOfCall>
+    <AddressOfCall>Even Gvirol 11, Bnei Brak</AddressOfCall>
+    <Latitude>32.09077505</Latitude>
+    <Longitude>34.834955245738115</Longitude>
+    <OpeningTime>2025-06-22T21:07:36</OpeningTime>
+    <FinishTime>2025-06-22T21:27:36</FinishTime>
+    <Description>yod and watever you have!!</Description>
+  </Call>
+  <Call>
+    <Id>4</Id>
+    <KindOfCall>CableAssistance</KindOfCall>
+    <AddressOfCall>Even Gvirol 10, Bnei Brak</AddressOfCall>
+    <Latitude>32.09033185</Latitude>
+    <Longitude>34.8317062</Longitude>
+    <OpeningTime>2025-06-22T21:07:36</OpeningTime>
+    <FinishTime>2025-06-22T21:37:36</FinishTime>
+    <Description>HELP ! HURRY</Description>
+  </Call>
+  <Call>
+    <Id>5</Id>
+    <KindOfCall>fuelOilWater</KindOfCall>
+    <AddressOfCall>Even Gvirol 10, Tel Aviv</AddressOfCall>
+    <Latitude>32.072306</Latitude>
+    <Longitude>34.782064</Longitude>
+    <OpeningTime>2025-06-22T21:07:36</OpeningTime>
+    <FinishTime>2025-06-22T21:20:36</FinishTime>
+    <Description>emergency! im late for work </Description>
+  </Call>
+  <Call>
+    <Id>2</Id>
+    <KindOfCall>changeWheel</KindOfCall>
+    <AddressOfCall>Even Gvirol 18, Elad</AddressOfCall>
+    <Latitude>32.0539178</Latitude>
+    <Longitude>34.9586121</Longitude>
+    <OpeningTime>2025-06-22T21:07:36</OpeningTime>
+    <FinishTime>2025-06-22T21:30:36</FinishTime>
+    <Description>stuck!!! help</Description>
+  </Call>
+  <Call>
+    <Id>7</Id>
+    <KindOfCall>FirstAid</KindOfCall>
+    <AddressOfCall>Even Gvirol 20, Tel Aviv</AddressOfCall>
+    <Latitude>32.0736995</Latitude>
+    <Longitude>34.7819872</Longitude>
+    <OpeningTime>2025-06-22T12:46:36</OpeningTime>
+    <FinishTime>2025-06-22T13:00:00</FinishTime>
+    <Description>nnnnn</Description>
+  </Call>
+  <Call>
+    <Id>8</Id>
+    <KindOfCall>fuelOilWater</KindOfCall>
+    <AddressOfCall>Even Gvirol 11, Tel Aviv</AddressOfCall>
+    <Latitude>32.09077505</Latitude>
+    <Longitude>34.834955245738115</Longitude>
+    <OpeningTime>2025-06-22T12:46:36</OpeningTime>
+    <FinishTime>2025-06-22T13:30:00</FinishTime>
+    <Description>Even Gvirol!</Description>
+  </Call>
+  <Call>
+    <Id>9</Id>
+    <KindOfCall>changeWheel</KindOfCall>
+    <AddressOfCall>Even Gvirol 18, Elad</AddressOfCall>
+    <Latitude>32.0539178</Latitude>
+    <Longitude>34.9586121</Longitude>
+    <OpeningTime>2025-06-22T15:57:36</OpeningTime>
+    <FinishTime>2025-06-22T20:28:40</FinishTime>
+    <Description>help mmeeeee im stuck</Description>
+  </Call>
+  <Call>
+    <Id>10</Id>
+    <KindOfCall>FirstAid</KindOfCall>
+    <AddressOfCall>Even Gvirol 11, Elad</AddressOfCall>
+    <Latitude>32.0539178</Latitude>
+    <Longitude>34.9586121</Longitude>
+    <OpeningTime>2025-06-22T15:57:36</OpeningTime>
+    <FinishTime>2025-06-22T21:00:00</FinishTime>
+    <Description>blaalalalalaalallal</Description>
+  </Call>
+  <Call>
+    <Id>11</Id>
+    <KindOfCall>CableAssistance</KindOfCall>
+    <AddressOfCall>Even Gvirol 20, Elad</AddressOfCall>
+    <Latitude>32.0539178</Latitude>
+    <Longitude>34.9586121</Longitude>
+    <OpeningTime>2025-06-22T15:57:36</OpeningTime>
+    <FinishTime>2025-06-22T16:20:00</FinishTime>
+    <Description>hiiiiii</Description>
+  </Call>
+  <Call>
+    <Id>12</Id>
+    <KindOfCall>fuelOilWater</KindOfCall>
+    <AddressOfCall>Even Gvirol 11, Tel Aviv</AddressOfCall>
+    <Latitude>32.09077505</Latitude>
+    <Longitude>34.834955245738115</Longitude>
+    <OpeningTime>2025-06-22T15:57:36</OpeningTime>
+    <FinishTime>2025-06-22T16:30:00</FinishTime>
+    <Description>helo! watsap</Description>
+  </Call>
+</ArrayOfCall>

@@ -1,0 +1,131 @@
+﻿<Window x:Class="PL.Volunteer.VolunteerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Volunteer"
+        mc:Ignorable="d"
+        Title="VolunteerWindow" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+         Loaded="Window_Loaded"
+         Closed="Window_Closed"
+        >
+    <Window.Resources>
+        <Style x:Key="StandardLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Width" Value="90"/>
+            <!--<Setter Property="Margin" Value="5"/>-->
+        </Style>
+        <Style x:Key="convertAddCollapsed" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Visibility" Value="{Binding AddOrUpdate, Converter={StaticResource ConverterAddCollapsedUpdateVissableKey}}"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+       
+
+        <StackPanel Grid.Row="1" Margin="50,15,0,15" Orientation="Vertical" HorizontalAlignment="Left" Width="auto">
+
+
+            <!--id-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="id:"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBox IsReadOnly="{Binding AddOrUpdate, Converter={StaticResource ConverterAddWriteUpdateReadKey}}"
+                                               Text="{Binding CurrentVolunteer.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  Width="100"  ></TextBox>
+            </StackPanel>
+
+            <!--name-string-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="name:"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBox Text="{Binding CurrentVolunteer.Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100"  ></TextBox>
+            </StackPanel>
+
+            <!--phone-srting-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="phone number:"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBox Text="{Binding CurrentVolunteer.PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  Width="100"  ></TextBox>
+            </StackPanel>
+            <!--email-srting-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="email:"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBox Text="{Binding CurrentVolunteer.Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100"  ></TextBox>
+            </StackPanel>
+            <!--position-enum-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="position:"  Style="{StaticResource StandardLabelStyle}"/>
+                <ComboBox ItemsSource="{Binding Source={StaticResource PositionCollectionKey}}" 
+                  SelectedValue="{Binding CurrentVolunteer.Position , Mode=TwoWay, NotifyOnValidationError=true, 
+                  ValidatesOnExceptions=true}" Width="100" IsEnabled="{Binding CurrentVolunteer.Position,Converter={StaticResource ConverterEnableChangePositionKey}}" ></ComboBox>
+            </StackPanel>
+            <!--password-srting-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="password:"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBox Text="{Binding CurrentVolunteer.Password, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100"  ></TextBox>
+            </StackPanel>
+            <!--maxium distance-double-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="maxium distance:"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBox Text="{Binding CurrentVolunteer.MaximumDistanceForReading, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100"  ></TextBox>
+            </StackPanel>
+            <!--type of distance-enum-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="type of distance"  Style="{StaticResource StandardLabelStyle}"/>
+                <ComboBox ItemsSource="{Binding Source={StaticResource TypeOfDistanceCollectionKey}}" 
+                    SelectedValue="{Binding CurrentVolunteer.TypeOfDistance , Mode=TwoWay, NotifyOnValidationError=true, 
+                    ValidatesOnExceptions=true}" Width="100"  ></ComboBox>
+            </StackPanel>
+            <!--active-bool-->
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="is active:"  Style="{StaticResource StandardLabelStyle}"/>
+                <CheckBox IsEnabled="{Binding CurrentVolunteer.CallInProgress, Converter={StaticResource ConverterEnableActiveKey} }" IsChecked="{Binding CurrentVolunteer.Active, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100" />
+            </StackPanel>
+            <!--addres-srting-->
+            <StackPanel Orientation="Horizontal">
+                <Label Content="current address:"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBox Text="{Binding CurrentVolunteer.CurrentAddress, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="auto"  ></TextBox>
+            </StackPanel>
+            <StackPanel  Style="{StaticResource convertAddCollapsed}">
+                <Label Content="SumCancledCalls"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBlock Text="{Binding CurrentVolunteer.SumCancledCalls, Mode=OneWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100" />
+            </StackPanel>
+            <StackPanel  Style="{StaticResource convertAddCollapsed}">
+                <Label Content="SumCaredCalls"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBlock Text="{Binding CurrentVolunteer.SumCaredCalls, Mode=OneWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100" />
+            </StackPanel>
+            <StackPanel Style="{StaticResource convertAddCollapsed}">
+                <Label Content="SumIrelevantCalls"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBlock Text="{Binding CurrentVolunteer.SumIrelevantCalls, Mode=OneWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="100" />
+            </StackPanel>
+            <StackPanel Style="{StaticResource convertAddCollapsed}">
+                <Label Content="CallInProgress"  Style="{StaticResource StandardLabelStyle}"/>
+                <TextBlock Text="{Binding CurrentVolunteer.CallInProgress ,Mode=OneWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Width="auto"></TextBlock>
+            </StackPanel>
+            
+
+        </StackPanel >
+        <StackPanel Orientation="Horizontal" Grid.Row="0" >
+            <Button Content="{Binding AddOrUpdate}" Click="btnAddUpdate_Click" Width="100" Margin="10"/>
+            <StackPanel Orientation="Horizontal" Visibility="{Binding UserPosition,Converter={StaticResource ConverterVisibiltyStackPanelForVolunteerKey}}">
+            <StackPanel Orientation="Horizontal" Visibility="{Binding CurrentVolunteer.CallInProgress, Converter={StaticResource CallVisibilityMultiConverterKey}}">
+                <Button  Content="comlete treatment" Click="updateEndCall_Click"/>
+                <Button Content="cancel treatment" Click="updateCancelCall_Click"/>
+            </StackPanel>
+            <Button Content="choose new call" Click="chooseCall_Click">
+                <Button.Visibility>
+                    <MultiBinding Converter="{StaticResource CallVisibilityMultiConverterKey}">
+                        <Binding Path="CurrentVolunteer.Active"/>
+                        <Binding Path="CurrentVolunteer.CallInProgress"/>
+                    </MultiBinding>
+                </Button.Visibility>
+            </Button>
+            <Button  Content="calls history" Click="showHistoryClosedCalls_Click" />
+        </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

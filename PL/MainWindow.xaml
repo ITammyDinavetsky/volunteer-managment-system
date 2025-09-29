@@ -1,0 +1,82 @@
+﻿<Window x:Class="PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Loaded="Load_Window"
+        Closed="Window_Closed"
+        >
+    <Window.Resources>
+        <Style x:Key="StandardButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <!--clock-->
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="50,15" Orientation="Vertical" HorizontalAlignment="Left">
+            <Label Content="{Binding CurrentTime}" FontWeight="Bold" FontSize="20"/>
+            <Label Content="enter interval"/>
+            <TextBox Text="{Binding Interval, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"></TextBox>
+            <Button IsEnabled="{Binding RunSimulator, Converter={StaticResource ConverterEnableButtonSimulatorKey}}" Content="add minute" Click="btnAddOneMinute_Click" Style="{StaticResource StandardButtonStyle}"></Button>
+            <Button IsEnabled="{Binding RunSimulator, Converter={StaticResource ConverterEnableButtonSimulatorKey}}" Content="add hour" Click="btnAddOneHour_Click" Style="{StaticResource StandardButtonStyle}" ></Button>
+            <Button IsEnabled="{Binding RunSimulator, Converter={StaticResource ConverterEnableButtonSimulatorKey}}" Content="add day" Click="btnAddOneDay_Click" Style="{StaticResource StandardButtonStyle}" ></Button>
+            <Button IsEnabled="{Binding RunSimulator, Converter={StaticResource ConverterEnableButtonSimulatorKey}}" Content="add month" Click="btnAddOneMonth_Click" Style="{StaticResource StandardButtonStyle}"></Button>
+            <Button IsEnabled="{Binding RunSimulator, Converter={StaticResource ConverterEnableButtonSimulatorKey}}" Content="add year" Click="btnAddOneYear_Click"  Style="{StaticResource StandardButtonStyle}" ></Button>
+            <Button  Content="{Binding RunSimulator, Converter={StaticResource ConverterStartSimulatorToStopKey}}" Click="btnSimulatorAction_click"></Button>
+        </StackPanel>
+        <!--config-->
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="50,15" Orientation="Vertical" HorizontalAlignment="Left">
+            <TextBox Text="{Binding RiskRange}"  TextChanged="TextBox_TextChanged"></TextBox>
+            <Button Content="save" Style="{StaticResource StandardButtonStyle}" Click="UpdateRiskRange_Click"></Button>
+        </StackPanel>
+        <!--another-->
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="50,15" Orientation="Vertical" HorizontalAlignment="Left">
+            <Button Content="Handle Volunteer" Click="btnShowVolunteers_Click" Style="{StaticResource StandardButtonStyle}"></Button>
+            <Button  Content="Handle Call" Click="btnShowCalls_Click" Style="{StaticResource StandardButtonStyle}"></Button>
+            <Button IsEnabled="{Binding RunSimulator, Converter={StaticResource ConverterEnableButtonSimulatorKey}}" Content="Initialize" Click="btnIntialize_Click" Style="{StaticResource StandardButtonStyle}"></Button>
+            <Button IsEnabled="{Binding RunSimulator, Converter={StaticResource ConverterEnableButtonSimulatorKey}}" Content="ResetDB" Click="btnResetDB_Click" Style="{StaticResource StandardButtonStyle}"></Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Label Content="sum of calls by status"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Tag="0"  Content="Being Cared" Click="btnShowCalls_Click"/>
+                <TextBlock Text="{Binding CallByStatus[0]}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Tag="1" Content="Treat In Risk" Click="btnShowCalls_Click"/>
+                <TextBlock Text="{Binding CallByStatus[1]}"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal">
+                <Button Tag="2" Content="Open" Click="btnShowCalls_Click"/>
+                <TextBlock Text="{Binding CallByStatus[2]}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Tag="3" Content="Open In Risk" Click="btnShowCalls_Click"/>
+                <TextBlock Text="{Binding CallByStatus[3]}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Tag="Closed" Content="Closed" Click="btnShowCalls_Click"/>
+                <TextBlock Text="{Binding CallByStatus[4]}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Tag="5" Content="Irelavant" Click="btnShowCalls_Click"/>
+                <TextBlock Text="{Binding CallByStatus[5]}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

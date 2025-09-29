@@ -1,0 +1,27 @@
+﻿<Application x:Class="PL.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PL"
+             StartupUri="Register.xaml">
+    <Application.Resources>
+        <local:KindOfCallCollection x:Key="KindOfCallCollectionKey"/>
+        <local:CloseCallInListCollection x:Key="CloseCallInListCollectionKey"/>
+        <local:StatusCollection x:Key="StatusCollectionKey"/>
+        <local:PositionCollection x:Key="PositionCollectionKey"/>
+        <local:TypeOfDistanceCollection x:Key="TypeOfDistanceCollectionKey"/>
+        <local:StatusCallInProgressCollection x:Key="StatusCallInProgressCollectionKey"/>
+        <local:ConverterAddCollapsedUpdateVissable x:Key="ConverterAddCollapsedUpdateVissableKey" />
+        <local:ConverterAddWriteUpdateRead x:Key="ConverterAddWriteUpdateReadKey" />
+        <local:ConverterClosedIrelavantTreatTreatnInRiskRead x:Key="ConverterClosedIrelavantTreatTreatnInRiskReadKey"/>
+        <local:ConverterClosedIrelavantTreatTreatnInRiskIEnable x:Key="ConverterClosedIrelavantTreatTreatnInRiskIEnableKey"/>
+        <local:ConverterClosedIrelavantRead x:Key="ConverterClosedIrelavantReadKey"/>
+        <local:ConverterEnumKindOfCallToColor x:Key="ConverterEnumKindOfCallToColorKey"/>
+        <local:ConverterEnumStatusToColor x:Key="ConverterEnumStatusToColorKey"/>
+        <local:ConverterEnableActive x:Key="ConverterEnableActiveKey"/>
+        <local:ConverterVisibiltyStackPanelForVolunteer x:Key="ConverterVisibiltyStackPanelForVolunteerKey"/>
+        <local:CallVisibilityMultiConverter x:Key="CallVisibilityMultiConverterKey"/>
+        <local:ConverterEnableChangePosition x:Key="ConverterEnableChangePositionKey"/>
+        <local:ConverterStartSimulatorToStop x:Key="ConverterStartSimulatorToStopKey"/>
+        <local:ConverterEnableButtonSimulator x:Key="ConverterEnableButtonSimulatorKey"/>
+    </Application.Resources>
+</Application>
